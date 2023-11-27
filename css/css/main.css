@@ -1,0 +1,95 @@
+html {
+  font-size: calc(0.2rem + 1vw); }
+
+.circle_1,
+.circle_3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px auto; }
+
+.circle_1 {
+  position: relative;
+  width: 100%;
+  max-width: 18rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  border: 1rem solid #f14100;
+  overflow: hidden;
+  box-sizing: border-box;
+  transform: rotate(-16deg); }
+  .circle_1 .ellipse {
+    width: 11rem;
+    height: 11rem;
+    position: absolute; }
+    .circle_1 .ellipse::after, .circle_1 .ellipse::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      width: 100%;
+      aspect-ratio: 1;
+      border: 1rem solid #f14100;
+      border-radius: 50%; }
+  .circle_1 .top::after {
+    transform: translate(0, calc(50% - 1rem/2)); }
+  .circle_1 .top::before {
+    transform: translate(0, calc(-50% + 1rem/2)); }
+  .circle_1 .bottom::after {
+    transform: translate(calc(50% - 1rem/2)); }
+  .circle_1 .bottom::before {
+    transform: translate(calc(-50% + 1rem/2)); }
+
+.circle_2 {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 1;
+  border: 1rem solid #f14100;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: rotate(-16deg);
+  box-sizing: border-box; }
+  .circle_2 .ellipse {
+    display: flex;
+    margin: 1.52rem auto 0;
+    width: 12rem;
+    height: 6.48rem;
+    -webkit-box-reflect: below; }
+    .circle_2 .ellipse:after, .circle_2 .ellipse::before {
+      content: "";
+      width: 100%;
+      border: 1rem solid #f14100;
+      border-radius: 0 150px; }
+    .circle_2 .ellipse:nth-child(1):after {
+      border-radius: 150px 0; }
+    .circle_2 .ellipse:nth-child(2):before {
+      border-radius: 150px 0; }
+
+.circle_3 {
+  flex-direction: column;
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 1;
+  border: 1rem solid #f14100;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: rotate(-16deg);
+  box-sizing: border-box; }
+  .circle_3 .ellipse {
+    display: flex;
+    width: 12rem;
+    height: 6.48rem;
+    margin: -0.5rem 0; }
+    .circle_3 .ellipse:after, .circle_3 .ellipse::before {
+      content: "";
+      flex-grow: 1;
+      border: 1rem solid #f14100;
+      border-radius: 0 150px;
+      margin: 0 -0.5rem; }
+    .circle_3 .ellipse:nth-child(1):after {
+      border-radius: 150px 0; }
+    .circle_3 .ellipse:nth-child(2):before {
+      border-radius: 150px 0; }
+
+/*# sourceMappingURL=main.css.map */

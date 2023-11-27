@@ -1,0 +1,158 @@
+@import 'components/variables';
+
+html {
+    font-size: calc(0.2rem + 1vw);
+}
+
+.circle_1,
+.circle_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px auto;
+}
+
+//circle_1 start
+.circle_1 {
+    position: relative;
+    width: 100%;
+    max-width: $max_width;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    border: $border_width solid $background;
+    overflow: hidden;
+    box-sizing: border-box;
+    transform: rotate(-16deg);
+
+    .ellipse {
+        width: $max_width*2/3 - $border_width;
+        height: $max_width*2/3 - $border_width;
+        position: absolute;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            top: -$border_width;
+            left: -$border_width;
+            width: 100%;
+            aspect-ratio: 1;
+            border: $border_width solid $background;
+            border-radius: 50%;
+        }
+    }
+
+    .top {
+        &::after {
+            transform: translate(0, calc(50% - #{$border_width}/2));
+        }
+
+        &::before {
+            transform: translate(0, calc(-50% + #{$border_width}/2));
+        }
+    }
+
+    .bottom {
+        &::after {
+            transform: translate(calc(50% - #{$border_width}/2));
+        }
+
+        &::before {
+            transform: translate(calc(-50% + #{$border_width}/2));
+        }
+    }
+}
+
+//circle_1 end
+
+
+
+//circle_2 start
+.circle_2 {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $max_width;
+    aspect-ratio: 1;
+    border: $border_width solid $background;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(-16deg);
+    box-sizing: border-box;
+
+    .ellipse {
+        display: flex;
+        margin: $max_width*0.28/2 - $border_width auto 0;
+        width: $max_width*2/3;
+        height: $max_width*0.36;
+        -webkit-box-reflect: below;
+
+        &:after,
+        &::before {
+            content: "";
+            width: 100%;
+            border: $border_width solid $background;
+            border-radius: 0 150px;
+        }
+
+
+        &:nth-child(1) {
+            &:after {
+                border-radius: 150px 0;
+            }
+        }
+
+        &:nth-child(2) {
+            &:before {
+                border-radius: 150px 0;
+            }
+        }
+    }
+}
+
+//circle_2 end
+
+
+
+//circle_3 start
+.circle_3 {
+    flex-direction: column;
+    width: 100%;
+    max-width: $max_width;
+    aspect-ratio: 1;
+    border: $border_width solid $background;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(-16deg);
+    box-sizing: border-box;
+
+    .ellipse {
+        display: flex;
+        width: $max_width*2/3;
+        height: $max_width*0.36;
+        margin: $border_width/-2 0;
+
+        &:after,
+        &::before {
+            content: "";
+            flex-grow: 1;
+            border: $border_width solid $background;
+            border-radius: 0 150px;
+            margin: 0 $border_width/-2;
+        }
+
+
+        &:nth-child(1) {
+            &:after {
+                border-radius: 150px 0;
+            }
+        }
+
+        &:nth-child(2) {
+            &:before {
+                border-radius: 150px 0;
+            }
+        }
+    }
+}
+
+//circle_3 end
